@@ -4,103 +4,138 @@
         <title>Google</title>
         <!-- <link rel="stylesheet" type="text/css" href="/css/main.css"> -->
         <style>
+            html{
+                height: 100%;
+            }
             body {
+                font-family: arial,sans-serif;
+                min-height: 100%;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto 1fr auto;
                 margin: 0px;
                 padding: 0px;
-                box-sizing: border-box;
+
             }
-            
-            .nav-bar {
-                margin-left: 15px;
-                margin-right: 15px;
-                position: fixed;
-                top: 0;
-                width: 100%;
+        
+            button {
+                background-color: #f2f2f2;
+                border-radius: 4px;
+                border: 1px solid #f2f2f2;
+                font-size: 14px;
+                margin: 11px 4px;
+                padding: 0px 16px;
+                min-width: 54px;
+                height: 36px;
+            }
+
+            button:hover {
+                box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+                background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+                background-color: #f8f8f8;
+                border: 1px solid #c6c6c6;
+                color: #222;
             }
             
             ul{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
                 list-style-type: none;
-                margin: 0;
                 padding: 0;
+                margin: 0;
                 overflow: hidden;
                 border: 1px solid #e7e7e7;
+                width: 100%;
+            }
+
+            .button-group-right {
+                align-self: flex-end;
             }
             
             li {
-                float: left;
+                display: inline-flex;
+                flex-wrap: nowrap;
             }
             
             li a {
-                display: block;
                 text-align: center;
-                padding: 14px 16px;
+                padding: 14px 16px; 
                 text-decoration: none;
+                color: #5f6368;
+                font-size: 14px;
             }
             
             li:hover{
                 text-decoration: undeline;
             }
-            .center-element {
+            main {
                 text-align: center;
-                position: relative;
-                top: 120px;
-                margin: 0 auto;
-                max-width: 450px;
+                justify-self: center;
+                align-self: center;
             }
             
             #search-bar {
-                border-radius: 50px;
-                border-width: 1px;
-                border-color: black;
-                margin-bottom: 15px;
-                width: 400px;
-                height: 30px;
+                border-radius: 24px;
+                border: 1px solid #dfe1e5;
+                box-shadow: none;
+                z-index: 3;
+                margin: 0 auto;
+                width: 482px;
+                height: 44px;
+            }
+
+            #search-bar:hover {
+                box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+                border-color: rgba(223,225,229,0);
             }
             
-            #search-bar:hover{
-                box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
-            }
-            
-            
-            footer {
-                position: fixed;
-                bottom: 0;
-                width: 100%;
-            }
-            
-            .center-element {
-                justify-self: center;
+            footer{
+                background-color: #F2F2F2;
+                height: 40px;
+                font-size: 14px;
             }
           
           </style>
     </head>
     <body>
-        <div class="nav-bar">
+        <header>
             <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Store</a></li>
-                <li style="float:right"><a href="#">Gmail</a></li>
-                <li style="float:right"><a href="#">Images</a></li>
-                <li style="float:right"><a href="#">More</a></li>
+                <div class="button-group-left">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Store</a></li>
+                </div>
+                <div class="button-group-right">
+                    <li><a href="#">Gmail</a></li>
+                    <li><a href="#">Images</a></li>
+                    <li><a href="#">More</a></li>
+                </div>
             </ul>
-        </div>
-        <div class="center-element">
-            <img src="", alt="google logo">
+        </header>
+        <main>
+            <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png", alt="google logo">
             <form class="search-form">
                 <input id="search-bar"></input>
                 <br>
             </form>
-            <button>Google Search</button>
-            <button>I'm feeling lucky</button>          
-        </div>
+            <span id="search-buttons">
+                <button>Google Search</button>
+                <button>I'm feeling lucky</button>          
+            </span>
+        </main>
         <footer>
             <ul>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Advertising</a></li>
-                <li><a href="#">How Search Works</a></li>
-                <li><a style="float:right" href="#">Privacy</a></li>
-                <li><a style="float:right" href="#">Terms</a></li>
-                <li><a style="float:right" href="#">Settings</a></li>
+                <div class="button-group-left">
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Advertising</a></li>
+                    <li><a href="#">How Search Works</a></li>
+                </div>
+                <div class="button-group-right">
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Settings</a></li>
+                </div>
             </ul>
         </footer>
     </body>    
